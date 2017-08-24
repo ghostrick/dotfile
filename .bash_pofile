@@ -1,0 +1,2 @@
+export PATH=$HOME/.nodebrew/current/bin:$HOME/mongodb/bin:$PATH
+export PATH=$PATH:$HOME
