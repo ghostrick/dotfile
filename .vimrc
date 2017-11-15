@@ -28,12 +28,12 @@ set number
 set wildmenu
 set showcmd
 
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set tabstop=4
-set shiftwidth=4
-set smarttab
+"set shiftwidth=4
+"set softtabstop=4
+"set expandtab
+"set tabstop=4
+"set shiftwidth=4
+"set smarttab
 set backspace=indent,eol,start
 set clipboard=unnamed
 
@@ -86,6 +86,7 @@ call dein#add('plasticboy/vim-markdown')
 call dein#add('tyru/open-browser.vim')
 call dein#add('shime/vim-livedown')
 call dein#add('editorconfig/editorconfig-vim')
+call dein#add('purescript-contrib/purescript-vim')
 "call dein#add('Ghostrick/shinchoku.vim')
 
 "call dein#update()
@@ -272,4 +273,4 @@ let shinchoku_reset_time = 5
 let g:rustfmt_autosave = 1
 
 " 保存時に^M除去
-autocmd BufWritePre * :set fileformat=unix
+"autocmd BufWritePre * :set fileformat=unix
