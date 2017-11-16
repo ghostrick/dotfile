@@ -87,7 +87,6 @@ call dein#add('tyru/open-browser.vim')
 call dein#add('shime/vim-livedown')
 call dein#add('editorconfig/editorconfig-vim')
 call dein#add('purescript-contrib/purescript-vim')
-"call dein#add('Ghostrick/shinchoku.vim')
 
 "call dein#update()
 call dein#end()
@@ -244,10 +243,6 @@ function! LightlineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
-function! LightlineShinchoku()
-	return shinchoku#get_today_shinchoku()
-	"return "Hello"
-endfunction
 
 " TwitVim
 let twitvim_browser_cmd = 'open' " for Mac

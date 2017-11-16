@@ -8,6 +8,10 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'prompt' \
-  'homebrew'\
-  'git'
+  'homebrew' \
+  'git' \
+  'node' \
+  'ssh' \
+  'syntax-highlighting'
 
+zstyle ':prezto:module:prompt' theme 'leafia'
