@@ -57,3 +57,7 @@ function goall-www-deploy-prod (){
 function goall-api-deploy (){
     aws deploy push --region ap-northeast-1 --application-name goall-server --s3-location s3://ods-deploy-s3-bucket/staging/GL-SERVER-STAGING-DEPLOY-$RANDOM.zip --source ./ --ignore-hidden-file
 }
+
+function goall-api-deploy-prod (){
+    aws deploy push --region ap-northeast-1 --application-name goall-server --s3-location s3://ods-deploy-s3-bucket/product/GL-SERVER-PRODUCT-DEPLOY-$RANDOM.zip --source ./ --ignore-hidden-file
+}
