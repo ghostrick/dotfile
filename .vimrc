@@ -97,6 +97,7 @@ set background=dark
 
 " markdown
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufNewFile,BufRead *.mjs             set filetype=javascript
 
 let g:NERDTreeDirArrowExpandable  = '🍣'
 let g:NERDTreeDirArrowCollapsible = '🍣'
