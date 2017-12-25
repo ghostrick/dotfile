@@ -268,5 +268,7 @@ let shinchoku_reset_time = 5
 " rust
 let g:rustfmt_autosave = 1
 
+" markdown折りたたみ無効
+let g:vim_markdown_folding_disabled=1
 " 保存時に^M除去
 "autocmd BufWritePre * :set fileformat=unix
