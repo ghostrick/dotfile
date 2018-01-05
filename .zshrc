@@ -49,18 +49,3 @@ function insfood (){
     fi
 }
 
-function goall-www-deploy (){
-    webpack && gulp clean && gulp distCopy && mv ./node_modules ./.node_modules && aws deploy push --region ap-northeast-1 --application-name goall-www --s3-location s3://ods-deploy-s3-bucket/staging/GL-WWW-STAGING-DEPLOY-$RANDOM.zip --source ../ --ignore-hidden-file && mv ./.node_modules ./node_modules
-}
-
-function goall-www-deploy-prod (){
-    webpack && gulp clean && gulp distCopy && mv ./node_modules ./.node_modules && aws deploy push --region ap-northeast-1 --application-name goall-www --s3-location s3://ods-deploy-s3-bucket/product/GL-WWW-PRODUCT-DEPLOY-$RANDOM.zip --source ../ --ignore-hidden-file && mv ./.node_modules ./node_modules
-}
-
-function goall-api-deploy (){
-    aws deploy push --region ap-northeast-1 --application-name goall-server --s3-location s3://ods-deploy-s3-bucket/staging/GL-SERVER-STAGING-DEPLOY-$RANDOM.zip --source ./ --ignore-hidden-file
-}
-
-function goall-api-deploy-prod (){
-    aws deploy push --region ap-northeast-1 --application-name goall-server --s3-location s3://ods-deploy-s3-bucket/product/GL-SERVER-PRODUCT-DEPLOY-$RANDOM.zip --source ./ --ignore-hidden-file
-}
