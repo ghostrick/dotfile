@@ -7,9 +7,6 @@
 #
 
 
-# 開いたとき最大化
-echo '\e[9;1t'
-
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
