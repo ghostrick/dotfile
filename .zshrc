@@ -6,6 +6,7 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+
 # 開いたとき最大化
 echo '\e[9;1t'
 
@@ -14,11 +15,13 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+
 # alias
+
 alias v='vim'
 alias vi='vim'
 alias vz='vim ~/.zshrc'
-alias gig='git log --pretty=format:"%C(yellow)%H%Creset %C(green reverse) %an %Creset %C(blue)%ar%Creset %s" --graph'
+alias gig='git log --graph'
 
 # Customize to your needs...
 function take (){
