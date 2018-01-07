@@ -19,11 +19,20 @@ alias v='vim'
 alias vi='vim'
 alias vz='vim ~/.zshrc'
 alias gig='git log --graph'
+alias idea='(){
+    if [ "$1" = "add" ]; then
+        echo $2 >> ~/Documents/idealist.txt
+    elif [ "$1" = "show" ]; then
+        vim ~/Documents/idealist.txt
+    else
+        echo "Unknown option"
+    fi
+}'
 
 # Customize to your needs...
 function take (){
-  mkdir $1
-  cd $1
+    mkdir $1
+    cd $1
 }
 
 function today (){
