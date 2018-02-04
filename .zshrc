@@ -5,7 +5,11 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
+export ANDROID_HOME=/usr/local/share/android-sdk
+export PATH="$PATH:/Applications/Genymotion.app/Contents/MacOS/tools/"
+export PATH="$HOME/.rbenv/bin:$PATH"
 
+eval "$(rbenv init -)"
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then

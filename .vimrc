@@ -28,11 +28,10 @@ set number
 set wildmenu
 set showcmd
 
-"set shiftwidth=4
-"set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 "set expandtab
-"set tabstop=4
-"set shiftwidth=4
+"set tabstop=2
 "set smarttab
 set backspace=indent,eol,start
 set clipboard=unnamed
@@ -272,3 +271,4 @@ let g:rustfmt_autosave = 1
 let g:vim_markdown_folding_disabled=1
 " 保存時に^M除去
 "autocmd BufWritePre * :set fileformat=unix
+let g:extra_whitespace_ignored_filetypes = ['markdown']
