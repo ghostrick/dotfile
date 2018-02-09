@@ -59,3 +59,35 @@ function insfood (){
     fi
 }
 
+function lg_edit_pull_request (){
+    template_dir="${HOME}/dev/pull_request_template"
+    branch_name=$(git rev-parse --abbrev-ref HEAD)
+    template_base_path=$(echo "${template_dir}/base.md")
+    dir=$(echo "${template_dir}/${branch_name}")
+    put_path=$(echo "${dir}/template.md")
+
+
+    mkdir -p $dir
+    if [ ! -f $put_path ]; then
+        last_commit_name=$(git log --pretty=format:"%s" | head -n1)
+        echo "[${branch_name}] ${last_commit_name}" > $put_path
+        echo "" >> $put_path
+        echo "https://lovegraph.atlassian.net/browse/${branch_name}" >> $put_path
+        echo "" >> $put_path
+    fi
+
+    vim $put_path  # use your favorite editor!
+}
+
+function lg_send_pull_request (){
+  base_branch=$1
+  template_dir="${HOME}/dev/pull_request_template"
+  branch_name=$(git rev-parse --abbrev-ref HEAD)
+  template_path=$(echo "${template_dir}/${branch_name}/template.md")
+
+  echo "git push"
+  git push --set-upstream origin $branch_name
+
+  echo "hub pull-request -F $template_path -b $base_branch"
+  hub pull-request -F $template_path -b $base_branch
+}
