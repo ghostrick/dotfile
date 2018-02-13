@@ -100,6 +100,7 @@ au BufNewFile,BufRead *.mjs             set filetype=javascript
 
 let g:NERDTreeDirArrowExpandable  = '🍣'
 let g:NERDTreeDirArrowCollapsible = '🍣'
+let g:NERDTreeShowHidden = 1
 syntax on
 
 
