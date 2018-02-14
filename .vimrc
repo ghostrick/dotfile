@@ -94,35 +94,30 @@ set laststatus=2
 let g:lightline = {
         \  'colorscheme': 'wombat',
         \  'mode_map': {'c': 'NORMAL'},
-        \  'separator': { 'left': "\u2b80", 'right': "\u2b82" },
-        \  'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
+        \  'separator': { 'left': "\u2b80", 'right': "" },
+        \  'subseparator': { 'left': "\u2b81", 'right': "" },
         \  'active': {
-        \     'left': [ ['mode', 'paste'], [ 'fugitive', 'filename' ] ]
+        \     'left': [ ['mode', 'paste'], [ 'fugitive', 'filename' ] ],
+        \     'right': [ ['lineinfo'] ]
         \   },
+        \  'inactive': {
+        \     'right': [ ['lineinfo'] ]
+        \  },
         \  'component_function': {
         \     'modified': 'LightlineModified',
-        \     'readonly': 'LightlineReadonly',
         \     'fugitive': 'LightlineFugitive',
         \     'filename': 'LightlineFilename',
-        \     'fileformat': 'LightlineFileformat',
-        \     'filetype': 'LightlineFiletype',
-        \     'fileencoding': 'LightlineFileencoding',
         \     'mode': 'LightlineMode',
         \   }
         \ }
 
 function! LightlineModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
-
-function! LightlineReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '*' : &modifiable ? '' : '-'
 endfunction
 
 function! LightlineFilename()
-  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
+  return (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \  &ft == 'unite' ? unite#gMyFileformatet_status_string() :
         \  &ft == 'vimshell' ? vimshell#get_status_string() :
         \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
         \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
@@ -134,18 +129,6 @@ function! LightlineFugitive()
   else
     return ''
   endif
-endfunction
-
-function! LightlineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
-endfunction
-
-function! LightlineFiletype()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
-endfunction
-
-function! LightlineFileencoding()
-  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
 endfunction
 
 function! LightlineMode()
@@ -164,7 +147,6 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 " neocomplete
 inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
 inoremap <expr><C-Tab> pumvisible() ? "\<Up>" : "\<C-Tab>"
-inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "<CR>"
 
 "neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
