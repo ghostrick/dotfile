@@ -70,8 +70,6 @@ call dein#add('elixir-lang/vim-elixir')
 call dein#add('bronson/vim-trailing-whitespace')
 call dein#add('rust-lang/rust.vim')
 call dein#add('dart-lang/dart-vim-plugin')
-call dein#add('posva/vim-vue')
-call dein#add('mattn/emmet-vim')
 call dein#add('plasticboy/vim-markdown')
 call dein#add('tyru/open-browser.vim')
 call dein#add('shime/vim-livedown')
@@ -96,8 +94,8 @@ set laststatus=2
 let g:lightline = {
         \  'colorscheme': 'wombat',
         \  'mode_map': {'c': 'NORMAL'},
-    \  'separator': { 'left': "\u2b80", 'right': "\u2b82" },
-    \  'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
+        \  'separator': { 'left': "\u2b80", 'right': "\u2b82" },
+        \  'subseparator': { 'left': "\u2b81", 'right': "\u2b83" },
         \  'active': {
         \     'left': [ ['mode', 'paste'], [ 'fugitive', 'filename' ] ]
         \   },
