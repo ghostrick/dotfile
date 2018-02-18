@@ -75,6 +75,7 @@ call dein#add('tyru/open-browser.vim')
 call dein#add('shime/vim-livedown')
 call dein#add('editorconfig/editorconfig-vim')
 call dein#add('purescript-contrib/purescript-vim')
+call dein#add('slim-template/vim-slim')
 
 call dein#end()
 call dein#save_state()
@@ -199,4 +200,5 @@ let g:NERDTreeShowHidden = 1
 
 " filetype set
 au BufRead,BufNewFile *.md  set filetype=markdown
-au BufNewFile,BufRead *.mjs set filetype=javascript
+au BufRead,BufNewFile *.mjs set filetype=javascript
+au BufRead,BufNewFile *.slim,*.slime setfiletype slim
