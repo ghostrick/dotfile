@@ -8,7 +8,9 @@
 export ANDROID_HOME=/usr/local/share/android-sdk
 export PATH="$PATH:/Applications/Genymotion.app/Contents/MacOS/tools/"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.anyenv/bin:$PATH"
 
+eval "$(anyenv init -)"
 eval "$(rbenv init -)"
 
 # Source Prezto.
