@@ -18,6 +18,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# curl等でurlをクォートで囲わなくても使える
+setopt nonomatch
 
 # alias
 
