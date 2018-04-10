@@ -24,6 +24,11 @@ setopt nonomatch
 # alias
 alias psgr='postgres -D /usr/local/var/postgres'
 alias open='noglob open'
+
+## nim
+alias nimrun='nim compile --run'
+
+## vim
 alias v='vim'
 alias vi='vim'
 alias vz='vim ~/.zshrc'
