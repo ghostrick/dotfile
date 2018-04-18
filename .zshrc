@@ -52,19 +52,3 @@ function take (){
 function today (){
     git log --numstat --pretty="%H"  --no-merges --after='24 hour ago'  | awk 'NF==3 {plus+=$1; minus+=$2} END {printf("%d\n", plus)}'
 }
-
-function ins (){
-    if [ x"$1" = x"-edit" ]; then
-        vim ~/dev/php/ig-api/Leafiagram/index.php
-    else
-        php ~/dev/php/ig-api/Leafiagram/index.php
-    fi
-}
-
-function insfood (){
-    if [ x"$1" = x"-edit" ]; then
-        vim ~/dev/php/ig-api/Leafiagram/food/index.php
-    else
-        php ~/dev/php/ig-api/Leafiagram/food/index.php
-    fi
-}
