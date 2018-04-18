@@ -74,6 +74,7 @@ call dein#add('shime/vim-livedown')
 call dein#add('editorconfig/editorconfig-vim')
 call dein#add('slim-template/vim-slim')
 call dein#add('zah/nim.vim')
+call dein#add('keith/swift.vim')
 
 call dein#end()
 call dein#save_state()
