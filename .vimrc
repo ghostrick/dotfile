@@ -25,12 +25,16 @@ set ruler
 set number
 set wildmenu
 set showcmd
+set cursorline
 
 set shiftwidth=2
 set softtabstop=2
 set backspace=indent,eol,start
 set clipboard=unnamed
 
+" ビープ音無効化
+set visualbell t_vb=
+set noerrorbells
 
 " key map
 imap { {}<LEFT>
@@ -52,29 +56,35 @@ call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/neosnippet')
 call dein#add('Shougo/neosnippet-snippets')
-call dein#add('wavded/vim-stylus')
-call dein#add('digitaltoad/vim-pug')
-call dein#add('othree/html5.vim')
-call dein#add('hail2u/vim-css3-syntax')
-call dein#add('othree/yajs.vim')
 call dein#add('w0ng/vim-hybrid')
-call dein#add('leafgarland/typescript-vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('itchyny/lightline.vim')
 call dein#add('tpope/vim-fugitive')
 call dein#add('tyru/open-browser.vim')
-call dein#add('basyura/twibill.vim')
-call dein#add('mattn/webapi-vim')
 call dein#add('vim-scripts/TwitVim')
-call dein#add('elixir-lang/vim-elixir')
 call dein#add('bronson/vim-trailing-whitespace')
 call dein#add('plasticboy/vim-markdown')
 call dein#add('tyru/open-browser.vim')
 call dein#add('shime/vim-livedown')
 call dein#add('editorconfig/editorconfig-vim')
-call dein#add('slim-template/vim-slim')
-call dein#add('zah/nim.vim')
+call dein#add('kien/ctrlp.vim')
+
+" programming syntax
+call dein#add('leafgarland/typescript-vim')
+call dein#add('othree/yajs.vim')
+call dein#add('elixir-lang/vim-elixir')
 call dein#add('keith/swift.vim')
+call dein#add('zah/nim.vim')
+
+" css syntax
+call dein#add('hail2u/vim-css3-syntax')
+call dein#add('wavded/vim-stylus')
+
+" html syntax
+call dein#add('slim-template/vim-slim')
+call dein#add('digitaltoad/vim-pug')
+call dein#add('othree/html5.vim')
+
 
 call dein#end()
 call dein#save_state()
@@ -136,6 +146,12 @@ function! LightlineMode()
 endfunction
 
 
+" ---------------------------
+" important settings
+" ---------------------------
+
+nnoremap <ESC><ESC> :nohlsearch<CR>
+
 
 " ---------------------------
 " develop settings
@@ -143,6 +159,9 @@ endfunction
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+nnoremap @p :CtrlP<CR>
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|deps'
 
 " neocomplete
 inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
@@ -153,9 +172,6 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 imap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-
-
 
 
 " ---------------------------
@@ -183,9 +199,6 @@ let g:vim_markdown_folding_disabled=1
 
 " markdownの末尾空白のハイライトを無効化
 let g:extra_whitespace_ignored_filetypes = ['markdown']
-
-
-
 
 
 " --------------------
