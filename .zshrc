@@ -18,6 +18,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# ssh-add
+ssh-add /Users/ishizakatomoya/.ssh/id_rsa_github >&/dev/null
+
 # curl等でurlをクォートで囲わなくても使える
 setopt nonomatch
 
@@ -32,7 +35,6 @@ alias nimrun='nim compile --run'
 alias v='vim'
 alias vi='vim'
 alias vz='vim ~/.zshrc'
-alias gig='git log --graph'
 alias idea='(){
     if [ "$1" = "add" ]; then
         echo $2 >> ~/Documents/idealist.txt
@@ -43,7 +45,14 @@ alias idea='(){
     fi
 }'
 
-# Customize to your needs...
+# git alias
+alias gig='git log --graph'
+
+function gic() {
+    git add .
+    git commit -m "$1"
+}
+
 function take (){
     mkdir $1
     cd $1
