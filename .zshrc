@@ -36,28 +36,32 @@ alias v='vim'
 alias vi='vim'
 alias vz='vim ~/.zshrc'
 alias idea='(){
-    if [ "$1" = "add" ]; then
-        echo $2 >> ~/Documents/idealist.txt
-    elif [ "$1" = "show" ]; then
-        vim ~/Documents/idealist.txt
-    else
-        echo "Unknown option"
-    fi
+  if [ "$1" = "add" ]; then
+    echo $2 >> ~/Documents/idealist.txt
+  elif [ "$1" = "show" ]; then
+    vim ~/Documents/idealist.txt
+  else
+    echo "Unknown option"
+  fi
 }'
 
 # git alias
 alias gig='git log --graph'
 
+function gen_lower_uuid() {
+  uuidgen | tr [:upper:] [:lower:]
+}
+
 function gic() {
-    git add .
-    git commit -m "$1"
+  git add .
+  git commit -m "$1"
 }
 
 function take (){
-    mkdir $1
-    cd $1
+  mkdir $1
+  cd $1
 }
 
 function today (){
-    git log --numstat --pretty="%H"  --no-merges --after='24 hour ago'  | awk 'NF==3 {plus+=$1; minus+=$2} END {printf("%d\n", plus)}'
+  git log --numstat --pretty="%H"  --no-merges --after='24 hour ago'  | awk 'NF==3 {plus+=$1; minus+=$2} END {printf("%d\n", plus)}'
 }
