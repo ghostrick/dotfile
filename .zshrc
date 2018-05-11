@@ -39,6 +39,8 @@ alias idea='(){
   if [ "$1" = "add" ]; then
     echo $2 >> ~/Documents/idealist.txt
   elif [ "$1" = "show" ]; then
+    cat ~/Documents/idealist.txt
+  elif [ "$1" = "edit" ]; then
     vim ~/Documents/idealist.txt
   else
     echo "Unknown option"
