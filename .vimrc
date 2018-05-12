@@ -75,6 +75,7 @@ call dein#add('othree/yajs.vim')
 call dein#add('elixir-lang/vim-elixir')
 call dein#add('keith/swift.vim')
 call dein#add('zah/nim.vim')
+call dein#add('pangloss/vim-javascript')
 
 " css syntax
 call dein#add('hail2u/vim-css3-syntax')
@@ -159,6 +160,7 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
+
 
 nnoremap @p :CtrlP<CR>
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|deps'
