@@ -71,11 +71,10 @@ call dein#add('kien/ctrlp.vim')
 
 " programming syntax
 call dein#add('leafgarland/typescript-vim')
-call dein#add('othree/yajs.vim')
 call dein#add('elixir-lang/vim-elixir')
-call dein#add('keith/swift.vim')
 call dein#add('zah/nim.vim')
 call dein#add('pangloss/vim-javascript')
+call dein#add('ElmCast/elm-vim')
 
 " css syntax
 call dein#add('hail2u/vim-css3-syntax')
@@ -160,6 +159,8 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+let g:javascript_plugin_flow = 1
 
 
 nnoremap @p :CtrlP<CR>
