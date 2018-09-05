@@ -9,9 +9,10 @@ export ANDROID_HOME=/usr/local/share/android-sdk
 export PATH="$PATH:/Applications/Genymotion.app/Contents/MacOS/tools/"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.anyenv/bin:$PATH"
+export PATH="/usr/local/Cellar/openssl/1.0.2o_2/include:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 eval "$(anyenv init -)"
-eval "$(rbenv init -)"
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -67,3 +68,6 @@ function take (){
 function today (){
   git log --numstat --pretty="%H"  --no-merges --after='24 hour ago'  | awk 'NF==3 {plus+=$1; minus+=$2} END {printf("%d\n", plus)}'
 }
+
+# added by travis gem
+[ -f /Users/ishizakatomoya/.travis/travis.sh ] && source /Users/ishizakatomoya/.travis/travis.sh
