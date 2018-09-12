@@ -14,7 +14,7 @@ set encoding=utf-8
 set guifont=*
 set t_Co=256
 set hlsearch
-set ignorecase
+set noignorecase
 set smartcase
 set wrap
 

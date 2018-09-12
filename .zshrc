@@ -69,5 +69,9 @@ function today (){
   git log --numstat --pretty="%H"  --no-merges --after='24 hour ago'  | awk 'NF==3 {plus+=$1; minus+=$2} END {printf("%d\n", plus)}'
 }
 
+function ff () {
+  find "$1" -type f -print | xargs grep "$2"
+}
+
 # added by travis gem
 [ -f /Users/ishizakatomoya/.travis/travis.sh ] && source /Users/ishizakatomoya/.travis/travis.sh
