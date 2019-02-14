@@ -216,7 +216,8 @@ let g:NERDTreeShowHidden = 1
 " filetype set
 au BufRead,BufNewFile *.md  set filetype=markdown
 au BufRead,BufNewFile *.mjs set filetype=javascript
-au BufRead,BufNewFile *.slim,*.slime setfiletype slim
+au BufRead,BufNewFile *.slim,*.slime set filetype=slim
+au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
 
 au FileType javascript syn match jsDecorator '@[a-zA-Z_][0-9a-zA-Z_$]*'
 au FileType javascript hi link jsDecorator Function
