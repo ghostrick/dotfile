@@ -23,7 +23,7 @@ module.exports = {
     fontWeightBold: 'bold',
 
     // line height as a relative unit
-    lineHeight: 1.75,
+    lineHeight: 1.5,
 
     // letter spacing as a relative unit
     letterSpacing: 1,
@@ -118,18 +118,18 @@ module.exports = {
     // an array here instead of a color map object
     colors: {
       black: '#000000',
-      red: '#f9596c',
+      red: '#F9596C',
       green: '#1DC121',
       yellow: '#C7C329',
-      blue: '#277ae0',
+      blue: '#277AE0',
       magenta: '#C839C5',
       cyan: '#20C5C6',
-      white: '#C7C7C7',
-      lightBlack: '#444444',
+      white: '#EEEEEE',
+      lightBlack: '#666666',
       lightRed: '#FD6F6B',
       lightGreen: '#67F86F',
       lightYellow: '#FFFA72',
-      lightBlue: '#6A76FB',
+      lightBlue: '#277AE0',
       lightMagenta: '#FD7CFC',
       lightCyan: '#68FDFE',
       lightWhite: '#FFFFFF',

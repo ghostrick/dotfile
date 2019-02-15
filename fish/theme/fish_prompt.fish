@@ -14,8 +14,9 @@ function _git_is_dirty
 end
 
 function fish_prompt
-  set -l last_status $status
+  set fish_greeting 'Hello Ꮚˊ•ﻌ•ˋᏊ !!'
 
+  # Colors
   set -l red (set_color red)
   set -l blue (set_color blue)
   set -l normal (set_color normal)
@@ -24,41 +25,42 @@ function fish_prompt
   set -l bluebold (set_color --bold blue)
   set -l whitebold (set_color -o white)
 
+  set fish_color_normal white
+  set fish_color_command blue
+  set fish_color_error red
+  set fish_color_quote yellow
+  set fish_color_param white
+  set fish_color_search_match 888
+  set fish_color_autosuggestion 888
+
+  # Directory
   set -l cwd $whitebold(pwd | sed "s:^$HOME:~:")
 
-  # Output the prompt, left to right
-
-  # Add a newline before new prompts
   echo -e ''
 
-  # Print pwd or full path
   echo -n -s $cwd $normal
 
-  # Show git branch and status
+  # Git status
   if [ (_git_branch_name) ]
     set -l git_branch (_git_branch_name)
 
     if [ (_git_is_dirty) ]
-      set git_info $blue $git_branch "±" $normal
+      set git_info $bluebold $git_branch "±" $normal
     else
-      set git_info $blue $git_branch $normal
+      set git_info $bluebold $git_branch $normal
     end
-    echo -n -s ' · ' $git_info $normal
+    echo -n -s ' ' $git_info $normal
   end
 
-  set -l prompt_color $red
+  # If the last command was an error
+  set -l last_status $status
+  set -l prompt_color $redbold
   if test $last_status = 0
-    set prompt_color $blue
+    set prompt_color $bluebold
   end
 
-  # Terminate with a nice prompt char
+
   echo -e ''
   echo -e -n -s $prompt_color '⟩⟩ ' $normal
 
-  set fish_color_normal white
-  set fish_color_command blue
-  set fish_color_quote yellow
-  set fish_color_param lightWhite
-  set fish_color_search_match white
-  set fish_color_autosuggestion white
 end
