@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 14,
+    fontSize: 13.75,
 
     // font family with optional fallbacks
     // fontFamily: '"Ricty Diminished for Powerline", Menlo, Consolas',
@@ -26,7 +26,7 @@ module.exports = {
     lineHeight: 1.5,
 
     // letter spacing as a relative unit
-    letterSpacing: 0,
+    letterSpacing: 1,
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.8)',
