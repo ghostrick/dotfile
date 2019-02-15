@@ -9,10 +9,12 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 13.5,
 
     // font family with optional fallbacks
-    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    // fontFamily: '"Ricty Diminished for Powerline", Menlo, Consolas',
+    // fontFamily: 'Cica',
+    fontFamily: '"Roboto Mono for Powerline", "Meslo LG S for Powerline", "DejaVu Sans Mono", "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -21,13 +23,13 @@ module.exports = {
     fontWeightBold: 'bold',
 
     // line height as a relative unit
-    lineHeight: 1,
+    lineHeight: 1.75,
 
     // letter spacing as a relative unit
-    letterSpacing: 0,
+    letterSpacing: 1,
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
+    cursorColor: 'rgba(90,90,90,0.7)',
 
     // terminal text color under BLOCK cursor
     cursorAccentColor: '#000',
@@ -43,7 +45,7 @@ module.exports = {
 
     // terminal background color
     // opacity is only supported on macOS
-    backgroundColor: '#000',
+    backgroundColor: '#282c33',
 
     // terminal selection color
     selectionColor: 'rgba(248,28,229,0.3)',
@@ -52,7 +54,49 @@ module.exports = {
     borderColor: '#333',
 
     // custom CSS to embed in the main window
-    css: '',
+    // #277ae0
+    css: `{
+      .tabs_nav .tabs_list,
+      .tabs_nav .tabs_title,
+      .tabs_nav .tabs_list .tab_tab {
+        border: 0;
+      }
+      .tab_tab::before {
+        content: '';
+	width: 8px;
+	height: 8px;
+	background: #444;
+	border-radius: 100px;
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	transform: translateY(-50%);
+      }
+      .tab_tab.tab_active::before {
+	background: #277ae0;
+	transition: all 400ms cubic-bezier(0.0, 0.0, 0.2, 1);
+      }
+      .tab_tab::after {
+	content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background-color: #277ae0;
+	opacity: 0;
+	transform: scaleX(0);
+	transition: none;
+      }
+      .tab_tab.tab_active::after {
+	opacity: 1;
+	transform: scaleX(1);
+	transition: all 400ms cubic-bezier(0.0, 0.0, 0.2, 1);
+      }
+      .footer_footer {
+	font-size: 14px!important;
+      } 
+    }`,
 
     // custom CSS to embed in the terminal window
     termCSS: '',
@@ -74,14 +118,14 @@ module.exports = {
     // an array here instead of a color map object
     colors: {
       black: '#000000',
-      red: '#C51E14',
+      red: '#f9596c',
       green: '#1DC121',
       yellow: '#C7C329',
-      blue: '#0A2FC4',
+      blue: '#277ae0',
       magenta: '#C839C5',
       cyan: '#20C5C6',
       white: '#C7C7C7',
-      lightBlack: '#686868',
+      lightBlack: '#444444',
       lightRed: '#FD6F6B',
       lightGreen: '#67F86F',
       lightYellow: '#FFFA72',
@@ -137,7 +181,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [],
+  plugins:['hyper-statusline'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here

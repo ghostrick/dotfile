@@ -1,1 +1,0 @@
-/home/ghostrick/dotfile/nvim/init.vim

@@ -42,6 +42,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('mhartington/oceanic-next')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('tpope/vim-fugitive')
 
   " Directory Tree
   call dein#add('scrooloose/nerdtree')
@@ -63,6 +64,7 @@ syntax enable
 colorscheme OceanicNext
 
 let g:airline_theme='oceanicnext'
+let g:airline#extensions#tabline#enabled = 1
 
 " -----------------------------------------------------
 " Typing UX
