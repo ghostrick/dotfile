@@ -32,6 +32,12 @@ if dein#load_state('~/.cache/dein')
   call dein#add('othree/es.next.syntax.vim')
   call dein#add('wokalski/autocomplete-flow')
   call dein#add('flowtype/vim-flow')
+
+  " For Elm
+  " npm install -g elm elm-test elm-oracle elm-format
+  call dein#add('pbogut/deoplete-elm')
+  call dein#add('ElmCast/elm-vim')
+
   " Theme
   call dein#add('mhartington/oceanic-next')
   call dein#add('vim-airline/vim-airline')
