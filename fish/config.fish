@@ -4,7 +4,10 @@
 alias vim='nvim' 
 alias vi='nvim' 
 alias v='nvim'
-alias g="git"
+alias g='git'
+alias rm='gvfs-trash'
+alias gig='git log --graph'
+alias psgr='/etc/init.d/postgresql'
 
 function take --description "take <dirname>"
   mkdir -p $argv[1]
