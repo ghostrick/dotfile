@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 13.5,
+    fontSize: 14,
 
     // font family with optional fallbacks
     // fontFamily: '"Ricty Diminished for Powerline", Menlo, Consolas',
