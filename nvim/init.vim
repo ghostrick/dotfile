@@ -38,6 +38,9 @@ if dein#load_state('~/.cache/dein')
   call dein#add('pbogut/deoplete-elm')
   call dein#add('ElmCast/elm-vim')
 
+  " For HTML/CSS
+  call dein#add('slim-template/vim-slim')
+
   " Theme
   call dein#add('mhartington/oceanic-next')
   call dein#add('vim-airline/vim-airline')
@@ -80,7 +83,7 @@ map <C-n> :NERDTreeToggle<CR>
 " -----------------------------------------------------
 " Syntax
 " -----------------------------------------------------
-
+autocmd BufNewFile,BufRead *.slim,*.slime setlocal filetype=slim
 
 
 if dein#check_install()
