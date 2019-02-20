@@ -40,6 +40,7 @@ if dein#load_state('~/.cache/dein')
 
   " For HTML/CSS
   call dein#add('slim-template/vim-slim')
+  call dein#add('wavded/vim-stylus')
 
   " Theme
   call dein#add('mhartington/oceanic-next')
