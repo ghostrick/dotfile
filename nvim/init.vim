@@ -75,6 +75,7 @@ let g:airline#extensions#tabline#enabled = 1
 " -----------------------------------------------------
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
+nnoremap <ESC><ESC> :nohlsearch<CR>
 
 " -----------------------------------------------------
 " Directory Tree
