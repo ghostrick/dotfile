@@ -52,6 +52,9 @@ if dein#load_state('~/.cache/dein')
   " Directory Tree
   call dein#add('scrooloose/nerdtree')
 
+  " text style
+  call dein#add('editorconfig/editorconfig-vim')
+
   call dein#end()
   call dein#save_state()
 endif
