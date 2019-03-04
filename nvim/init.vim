@@ -78,13 +78,18 @@ let g:airline#extensions#tabline#enabled = 1
 " Typing UX
 " -----------------------------------------------------
 let g:deoplete#enable_at_startup = 1
+let g:flow#autoclose = 1
+
 inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
 nnoremap <ESC><ESC> :nohlsearch<CR>
+
 
 " -----------------------------------------------------
 " Directory Tree
 " -----------------------------------------------------
 map <C-n> :NERDTreeToggle<CR>
+
+let NERDTreeShowHidden=1
 
 " -----------------------------------------------------
 " Syntax
