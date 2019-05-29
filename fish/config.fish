@@ -14,4 +14,8 @@ function take --description "take <dirname>"
   cd $argv[1]
 end
 
+set ANDROID_HOME $HOME/Android/Sdk 
+
 set PATH /opt/elixir/bin $PATH
+set PATH $ANDROID_HOME/tools $PATH
+set PATH $ANDROID_HOME/platform-tools $PATH
