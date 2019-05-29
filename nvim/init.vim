@@ -55,6 +55,9 @@ if dein#load_state('~/.cache/dein')
   " text style
   call dein#add('editorconfig/editorconfig-vim')
 
+  " Other
+  call dein#add('prettier/vim-prettier', {'build': 'npm install'})
+
   call dein#end()
   call dein#save_state()
 endif
@@ -83,6 +86,8 @@ let g:flow#autoclose = 1
 inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
 nnoremap <ESC><ESC> :nohlsearch<CR>
 
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx PrettierAsync
 
 " -----------------------------------------------------
 " Directory Tree
