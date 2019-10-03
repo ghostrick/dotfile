@@ -14,7 +14,7 @@ module.exports = {
     // font family with optional fallbacks
     // fontFamily: '"Ricty Diminished for Powerline", Menlo, Consolas',
     // fontFamily: 'Cica',
-    fontFamily: '"Roboto Mono for Powerline", "Meslo LG S for Powerline", "DejaVu Sans Mono", "Lucida Console", monospace',
+    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace, "Noto Color Emoji"',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -147,7 +147,7 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: '',
+    shell: '/usr/bin/fish',
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used

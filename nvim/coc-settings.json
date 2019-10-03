@@ -1,0 +1,16 @@
+{
+  "languageserver": {
+    "elmLS": {
+      "command": "elm-language-server",
+      "execArgv": ["--nolazy"],
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"],
+      "initializationOptions": {
+        "elmAnalyseTrigger": "change"
+      }
+    }
+  },
+  "codeLens.enable": true,
+  "tsserver.enableJavascript": true,
+  "css.filetypes": ["css", "styl"]
+}

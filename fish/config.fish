@@ -5,7 +5,6 @@ alias vim='nvim'
 alias vi='nvim' 
 alias v='nvim'
 alias g='git'
-alias rm='gvfs-trash'
 alias gig='git log --graph'
 alias psgr='/etc/init.d/postgresql'
 
@@ -17,5 +16,8 @@ end
 set ANDROID_HOME $HOME/Android/Sdk 
 
 set PATH /opt/elixir/bin $PATH
+set PATH /opt/android-studio/bin/ $PATH
 set PATH $ANDROID_HOME/tools $PATH
 set PATH $ANDROID_HOME/platform-tools $PATH
+
+. ~/.asdf/asdf.fish

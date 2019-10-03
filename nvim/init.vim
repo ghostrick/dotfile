@@ -14,29 +14,22 @@ if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
 
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('w0rp/ale')
+  call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release'})
 
   " For Elixir
   call dein#add('elixir-lang/vim-elixir')
-  call dein#add('slashmili/alchemist.vim')
 
   " For TypeScript
-  " npm i -g neovim typescript
   call dein#add('HerringtonDarkholme/yats.vim')
-  call dein#add('mhartington/nvim-typescript', {'build': './install.sh'})
 
   " For JavaScript
-  " npm install -g tern flow-bin
-  call dein#add('carlitux/deoplete-ternjs')
-  call dein#add('othree/yajs.vim')
-  call dein#add('othree/es.next.syntax.vim')
-  call dein#add('wokalski/autocomplete-flow')
-  call dein#add('flowtype/vim-flow')
+  call dein#add('jelera/vim-javascript-syntax')
+  call dein#add('maxmellon/vim-jsx-pretty')
 
   " For Elm
-  " npm install -g elm elm-test elm-oracle elm-format
-  call dein#add('pbogut/deoplete-elm')
-  call dein#add('ElmCast/elm-vim')
+  " npm install -g elm elm-test elm-oracle elm-format @elm-tooling/elm-language-server
+  call dein#add('andys8/vim-elm-syntax')
 
   " For HTML/CSS
   call dein#add('slim-template/vim-slim')
@@ -54,9 +47,6 @@ if dein#load_state('~/.cache/dein')
 
   " text style
   call dein#add('editorconfig/editorconfig-vim')
-
-  " Other
-  call dein#add('prettier/vim-prettier', {'build': 'npm install'})
 
   call dein#end()
   call dein#save_state()
@@ -80,14 +70,16 @@ let g:airline#extensions#tabline#enabled = 1
 " -----------------------------------------------------
 " Typing UX
 " -----------------------------------------------------
-let g:deoplete#enable_at_startup = 1
-let g:flow#autoclose = 1
+let g:ale_fix_on_save = 1
+let g:ale_fixers = { 'elm': ['elm-format'], 'javascript': ['prettier'], 'typescript': ['prettier'] }
+let g:ale_elm_format_executable = 'elm-format'
+let g:ale_javascript_prettier_use_local_config = 1
 
 inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
 nnoremap <ESC><ESC> :nohlsearch<CR>
 
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx PrettierAsync
+nmap <leader>rename <Plug>(coc-rename)
+nmap <silent> <leader>ref <Plug>(coc-references)
 
 " -----------------------------------------------------
 " Directory Tree
