@@ -36,6 +36,9 @@ if dein#load_state('~/.cache/dein')
   call dein#add('wavded/vim-stylus')
   call dein#add('digitaltoad/vim-pug')
 
+  " For rst
+  call dein#add('gu-fan/riv.vim')
+
   " Theme
   call dein#add('mhartington/oceanic-next')
   call dein#add('vim-airline/vim-airline')
@@ -48,6 +51,10 @@ if dein#load_state('~/.cache/dein')
   " text style
   call dein#add('editorconfig/editorconfig-vim')
 
+  " preview
+  call dein#add('previm/previm')
+  call dein#add('tyru/open-browser.vim')
+  
   call dein#end()
   call dein#save_state()
 endif
