@@ -19,5 +19,13 @@ set PATH /opt/elixir/bin $PATH
 set PATH /opt/android-studio/bin/ $PATH
 set PATH $ANDROID_HOME/tools $PATH
 set PATH $ANDROID_HOME/platform-tools $PATH
+set PATH $HOME/.cargo/bin $PATH
+set PATH /usr/local/cuda/bin $PATH
+
+set LD_LIBRARY_PATH /usr/local/cuda/lib64 $LD_LIBRARY_PATH
 
 . ~/.asdf/asdf.fish
+
+if test -z $TMUX
+  tmux new-session
+end
