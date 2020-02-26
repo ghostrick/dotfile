@@ -36,8 +36,7 @@ if test -d /usr/local/cuda/bin
   set LD_LIBRARY_PATH /usr/local/cuda/lib64 $LD_LIBRARY_PATH
 end
 
-
-#. ~/.asdf/asdf.fish
+source ~/.asdf/asdf.fish
 
 if test -z $TMUX
   tmux new-session
