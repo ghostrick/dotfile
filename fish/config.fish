@@ -13,18 +13,31 @@ function take --description "take <dirname>"
   cd $argv[1]
 end
 
-set ANDROID_HOME $HOME/Android/Sdk 
+if test -d $HOME/Android/Sdk
+  set ANDROID_HOME $HOME/Android/Sdk 
+  set PATH $ANDROID_HOME/tools $PATH
+  set PATH $ANDROID_HOME/platform-tools $PATH
+end
 
-set PATH /opt/elixir/bin $PATH
-set PATH /opt/android-studio/bin/ $PATH
-set PATH $ANDROID_HOME/tools $PATH
-set PATH $ANDROID_HOME/platform-tools $PATH
-set PATH $HOME/.cargo/bin $PATH
-set PATH /usr/local/cuda/bin $PATH
+if test -d /opt/elixir/bin
+  set PATH /opt/elixir/bin $PATH
+end
 
-set LD_LIBRARY_PATH /usr/local/cuda/lib64 $LD_LIBRARY_PATH
+if test -d /opt/android-studio/bin
+  set PATH /opt/android-studio/bin/ $PATH
+end
 
-. ~/.asdf/asdf.fish
+if test -d $HOME/.cargo/bin
+  set PATH $HOME/.cargo/bin $PATH
+end
+
+if test -d /usr/local/cuda/bin
+  set PATH /usr/local/cuda/bin $PATH
+  set LD_LIBRARY_PATH /usr/local/cuda/lib64 $LD_LIBRARY_PATH
+end
+
+
+#. ~/.asdf/asdf.fish
 
 if test -z $TMUX
   tmux new-session

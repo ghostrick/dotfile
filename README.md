@@ -1,5 +1,10 @@
 # Dotfile
 
+## fish theme
+```
+fisher add ./fish/theme
+```
+
 ## coc.nvim
 ```
 CocInstall coc-angular
