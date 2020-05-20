@@ -3,6 +3,7 @@ if &compatible
 endif
 
 set number
+set expandtab
 set shiftwidth=2
 set softtabstop=2
 set backspace=indent,eol,start
@@ -78,7 +79,7 @@ let g:airline#extensions#tabline#enabled = 1
 " Typing UX
 " -----------------------------------------------------
 let g:ale_fix_on_save = 1
-let g:ale_fixers = { 'elm': ['elm-format'], 'javascript': ['prettier'], 'typescript': ['prettier'], 'typescriptreact': ['prettier'], 'elixir': ['mix_format'] }
+let g:ale_fixers = { 'elm': ['elm-format'], 'javascript': ['prettier'], 'typescript': ['prettier'], 'typescriptreact': ['prettier'], 'elixir': ['mix_format'], 'markdown': ['prettier'] }
 let g:ale_elm_format_executable = 'elm-format'
 let g:ale_javascript_prettier_use_local_config = 1
 
