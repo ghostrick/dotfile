@@ -7,7 +7,7 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set backspace=indent,eol,start
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 set runtimepath+=~/.cache/dein/./repos/github.com/Shougo/dein.vim
 
@@ -27,6 +27,9 @@ if dein#load_state('~/.cache/dein')
   " For JavaScript
   call dein#add('jelera/vim-javascript-syntax')
   call dein#add('maxmellon/vim-jsx-pretty')
+
+  " For Svelte
+  call dein#add('evanleck/vim-svelte')
 
   " For Elm
   " npm install -g elm elm-test elm-oracle elm-format @elm-tooling/elm-language-server
@@ -106,3 +109,8 @@ if dein#check_install()
   call dein#install()
 endif
 
+
+" -----------------------------------------------------
+" Preview
+" -----------------------------------------------------
+let g:previm_custom_css_path = '~/dotfile/nvim/previm.css'
