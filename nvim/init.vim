@@ -91,6 +91,7 @@ nnoremap <ESC><ESC> :nohlsearch<CR>
 
 nmap <leader>rename <Plug>(coc-rename)
 nmap <silent> <leader>ref <Plug>(coc-references)
+nmap <silent> gd <Plug>(coc-definition)
 
 " -----------------------------------------------------
 " Directory Tree

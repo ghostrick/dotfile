@@ -10,6 +10,7 @@
       }
     }
   },
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
   "elixirLS.dialyzerEnabled": false,
   "codeLens.enable": true,
   "tsserver.enableJavascript": true,
