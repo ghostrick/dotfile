@@ -58,6 +58,9 @@ if dein#load_state('~/.cache/dein')
   " preview
   call dein#add('previm/previm')
   call dein#add('tyru/open-browser.vim')
+
+  " Discord presence
+  " call dein#add('aurieh/discord.nvim')
   
   call dein#end()
   call dein#save_state()
@@ -110,8 +113,13 @@ if dein#check_install()
   call dein#install()
 endif
 
-
 " -----------------------------------------------------
 " Preview
 " -----------------------------------------------------
 let g:previm_custom_css_path = '~/dotfile/nvim/previm.css'
+
+" -----------------------------------------------------
+" Python
+" -----------------------------------------------------
+let g:python_host_prog = $HOME . '/.asdf/shims/python'
+let g:python3_host_prog = $HOME . '/.asdf/shims/python3'
