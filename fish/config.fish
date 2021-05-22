@@ -37,6 +37,8 @@ if test -d /usr/local/cuda/bin
 end
 
 source ~/.asdf/asdf.fish
+set -x XDG_CONFIG_HOME $HOME/.config
+set -x XDG_CACHE_HOME $HOME/.cache
 
 if test -z $TMUX
   tmux new-session
