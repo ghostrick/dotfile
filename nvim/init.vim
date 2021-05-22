@@ -11,6 +11,8 @@ set clipboard=unnamedplus
 
 set runtimepath+=~/.cache/dein/./repos/github.com/Shougo/dein.vim
 
+let mapleader = ","
+
 if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
 
@@ -34,6 +36,10 @@ if dein#load_state('~/.cache/dein')
   " For Elm
   " npm install -g elm elm-test elm-oracle elm-format @elm-tooling/elm-language-server
   call dein#add('andys8/vim-elm-syntax')
+
+  " For Flutter/Dart
+  call dein#add('dart-lang/dart-vim-plugin')
+  call dein#add('thosakwe/vim-flutter')
 
   " For HTML/CSS
   call dein#add('slim-template/vim-slim')
