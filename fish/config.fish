@@ -13,6 +13,10 @@ function take --description "take <dirname>"
   cd $argv[1]
 end
 
+if test -d $HOME/chromedriver
+  set PATH $HOME/chromedriver $PATH
+end
+
 if test -d $HOME/Android/Sdk
   set ANDROID_HOME $HOME/Android/Sdk 
   set PATH $ANDROID_HOME/tools $PATH
