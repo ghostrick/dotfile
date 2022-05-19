@@ -41,6 +41,9 @@ if dein#load_state('~/.cache/dein')
   call dein#add('dart-lang/dart-vim-plugin')
   call dein#add('thosakwe/vim-flutter')
 
+  " For Solidity
+  call dein#add('tomlion/vim-solidity')
+
   " For HTML/CSS
   call dein#add('slim-template/vim-slim')
   call dein#add('wavded/vim-stylus')
