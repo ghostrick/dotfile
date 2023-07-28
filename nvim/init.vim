@@ -9,7 +9,22 @@ set softtabstop=2
 set backspace=indent,eol,start
 set clipboard=unnamedplus
 
-set runtimepath+=~/.cache/dein/./repos/github.com/Shougo/dein.vim
+let $CACHE = expand('~/.cache')
+if !isdirectory($CACHE)
+  call mkdir($CACHE, 'p')
+endif
+if &runtimepath !~# '/dein.vim'
+  let s:dein_dir = fnamemodify('dein.vim', ':p')
+  if !isdirectory(s:dein_dir)
+    let s:dein_dir = $CACHE .. '/dein/repos/github.com/Shougo/dein.vim'
+    if !isdirectory(s:dein_dir)
+      execute '!git clone https://github.com/Shougo/dein.vim' s:dein_dir
+    endif
+  endif
+  execute 'set runtimepath^=' .. substitute(
+        \ fnamemodify(s:dein_dir, ':p') , '[/\\]$', '', '')
+endif
+
 
 let mapleader = ","
 
@@ -98,8 +113,12 @@ let g:ale_fixers = { 'elm': ['elm-format'], 'javascript': ['prettier'], 'javascr
 let g:ale_elm_format_executable = 'elm-format'
 let g:ale_javascript_prettier_use_local_config = 1
 
-inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
-nnoremap <ESC><ESC> :nohlsearch<CR>
+inoremap <silent><expr> <TAB>
+  \ coc#pum#visible() ? coc#pum#next(1):
+  \ <SID>check_back_space() ? "\<Tab>" :
+  \ coc#refresh()
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 nmap <leader>rename <Plug>(coc-rename)
 nmap <silent> <leader>ref <Plug>(coc-references)

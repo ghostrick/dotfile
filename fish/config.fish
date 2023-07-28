@@ -51,3 +51,6 @@ set -x XDG_CACHE_HOME $HOME/.cache
 if test -z $TMUX
   tmux new-session
 end
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/ghostrick/google-cloud-sdk/path.fish.inc' ]; . '/home/ghostrick/google-cloud-sdk/path.fish.inc'; end
