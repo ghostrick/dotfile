@@ -115,8 +115,7 @@ let g:ale_javascript_prettier_use_local_config = 1
 
 inoremap <silent><expr> <TAB>
   \ coc#pum#visible() ? coc#pum#next(1):
-  \ <SID>check_back_space() ? "\<Tab>" :
-  \ coc#refresh()
+  \ "\<TAB>"
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 

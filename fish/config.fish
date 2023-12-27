@@ -44,6 +44,19 @@ if test -d /usr/local/cuda/bin
   set LD_LIBRARY_PATH /usr/local/cuda/lib64 $LD_LIBRARY_PATH
 end
 
+if test -d $HOME/.ebcli-virtual-env/executables
+  set PATH $HOME/.ebcli-virtual-env/executables $PATH
+end
+
+if test /usr/lib/go-1.21/bin
+  set PATH /usr/lib/go-1.21/bin $PATH
+end
+
+if test -d $HOME/go
+  set GOPATH $HOME/go
+  set PATH $GOPATH/bin $PATH
+end
+
 source ~/.asdf/asdf.fish
 set -x XDG_CONFIG_HOME $HOME/.config
 set -x XDG_CACHE_HOME $HOME/.cache
