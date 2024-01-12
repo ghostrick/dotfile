@@ -1,5 +1,8 @@
 # Ubuntu: ~/.config/fish/conf.d/config.fish
-# Install theme: fisher add fish/theme
+# Install theme
+# * ln -s ./theme/fish_prompt.fish ~/.config/fish/functions/
+# * ln -s ./theme/fish_right_prompt.fish ~/.config/fish/functions/
+
 
 alias vim='nvim' 
 alias vi='nvim' 
