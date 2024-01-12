@@ -31,10 +31,6 @@ if test -d /opt/android-studio/bin
   set PATH /opt/android-studio/bin/ $PATH
 end
 
-if test -d $HOME/.cargo/bin
-  set PATH $HOME/.cargo/bin $PATH
-end
-
 if test -d $HOME/flutter
   set PATH $HOME/flutter/bin $PATH
 end
