@@ -16,6 +16,10 @@ function take --description "take <dirname>"
   cd $argv[1]
 end
 
+if test -d HOME/.cargo/env
+  . $HOME/.cargo/env
+end
+
 if test -d $HOME/chromedriver
   set PATH $HOME/chromedriver $PATH
 end
