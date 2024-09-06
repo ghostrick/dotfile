@@ -13,5 +13,10 @@
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
   "elixirLS.dialyzerEnabled": false,
   "codeLens.enable": true,
-  "css.filetypes": ["css", "styl"]
+  "css.filetypes": ["css", "styl"],
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "vue"
+  ]
 }
