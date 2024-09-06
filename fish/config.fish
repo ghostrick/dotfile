@@ -56,6 +56,11 @@ if test -d $HOME/go
   set PATH $GOPATH/bin $PATH
 end
 
+if test -d $HOME/.local/share/solana/install/active_release/bin
+  set PATH $HOME/.local/share/solana/install/active_release/bin $PATH
+end
+
+
 source ~/.asdf/asdf.fish
 set -x XDG_CONFIG_HOME $HOME/.config
 set -x XDG_CACHE_HOME $HOME/.cache
